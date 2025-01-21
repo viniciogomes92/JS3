@@ -6,11 +6,11 @@ function exibirTextoNaTela(tag, id, texto) {
   if (tag != '') {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2} );
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
   } else if (id != '') {
     let campo = document.getElementById(id);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2} );
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
   }
 }
 
@@ -23,7 +23,6 @@ function gerarNumeroAleatorio() {
     return gerarNumeroAleatorio();
   } else {
     listaDeNumerosSorteados.push(numeroEscolhido);
-    console.log(listaDeNumerosSorteados);
     return numeroEscolhido;
   }
 
@@ -31,7 +30,7 @@ function gerarNumeroAleatorio() {
 
 function verificarChute () {
   let chute = parseInt(document.querySelector('input').value);
-  console.log(chute, numeroSecreto);
+  
   if (chute == numeroSecreto) {
     let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
     exibirTextoNaTela('', 'resultado', `Parabéns, você acertou o número secreto em ${tentativas} ${palavraTentativa}.`);
